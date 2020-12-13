@@ -1,8 +1,12 @@
+''' Stable sorting algorithms maintain the relative order of records with equal keys (i.e. values). 
+That is, a sorting algorithm is stable if whenever there are two records R and S with the same key 
+and with R appearing before S in the original list, R will appear before S in the sorted list. '''
+
+
 def countSort(input, k):
-    '''Linear short.
-        Worst-case performance O(n+k), where k is 
-        the range of the non-negative key values.
-        Worst-case space complexity O(n+k)
+    '''Linear short member.
+    Worst-case performance O(n+k), where k is the range of the non-negative key values.
+    Worst-case space complexity O(n+k).
     '''
     # k must be greater than max value of array input
     # and greater than length of array
