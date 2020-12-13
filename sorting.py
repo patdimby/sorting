@@ -2,7 +2,7 @@ def countSort(input, k):
     '''Linear short.
         Worst-case performance O(n+k), where k is 
         the range of the non-negative key values.
-        Worst-case space complexity	{\displaystyle O(n+k)}O(n+k)
+        Worst-case space complexity O(n+k)
     '''
     # k must be greater than max value of array input
     # and greater than length of array
