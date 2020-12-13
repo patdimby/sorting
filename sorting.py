@@ -54,8 +54,11 @@ def countSort(input, k):
     '''
     # k must be greater than max value of array input
     # and greater than length of array
+    if k < max([len(input), max(input)]):
+        k = max([len(input), max(input)]) + 1
+    # set arrays
     count = [0] * (k + 1)
-    key = output = [0] * len(input)
+    output = [0] * len(input)
     # this routine count elements in array
     # element count begin at minimum of elements
     # order by ascending, like a set.
