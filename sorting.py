@@ -77,3 +77,46 @@ def countSort(input, k):
         output[count[x]] = x
         count[x] += 1
     return output
+
+def insertionSort(A):
+    '''
+    Worst-case performance	О(n2) comparisons and swaps
+    Best-case performance O(n) comparisons, O(1) swaps
+    Average performance	О(n2) comparisons and swaps
+    Worst-case space complexity	О(n) total, O(1) auxiliary
+    '''
+    i = 0
+    while i < len(A):
+        j = i
+        while j > 0 and A[j] < A[j - 1]:
+            # if value as inferior to precedent, swap element
+            A[j], A[j - 1] = A[j - 1], A[j]
+            j = j - 1
+        i = i + 1
+    return A
+    
+def selectionSort(a):
+    '''
+    Worst-case performance	О(n2) comparisons, О(n) swaps
+    Best-case performance	О(n2) comparisons, O(1) swaps
+    Average performance	О(n2) comparisons, О(n) swaps
+    Worst-case space complexity  O(1) auxiliary
+    '''
+    # a[0] to a[aLength-1] is the array to sort 
+    i, j = 0, 0
+    aLength = len(a) # initialise to a's length
+    # advance the position through the entire array 
+    #  (could do i < aLength-1 because single element is also min element) 
+    for i in range(aLength - 1):
+        # find the min element in the unsorted a[i .. aLength-1]
+        # assume the min is the first element.
+        jMin = i
+        #test against elements after i to find the smallest
+        for j in (i + 1, aLength - 1):
+        #   if this element is less, then it is the new minimum
+            if a[j] < a[jMin]:
+                # found new minimum; remember its index.
+                jMin = j
+        if jMin != i:
+            a[i], a[jMin] = a[jMin], a[i]
+    return a
