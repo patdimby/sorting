@@ -37,11 +37,11 @@ def hoare_partition(A, low, high):
     pivot = A[int((high + low) / 2)]
     i = low - 1
     j = high + 1
-    if j == len(A):
-        j = j - 1
+    if j >= len(A):
+        j = len(A) - 1
     while A[i] < pivot:
         i = i + 1
-    while A[j] > pivot: 
+    while A[j] > pivot and j > 0: 
         j = j - 1
     if i >= j:
         return j
