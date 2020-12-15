@@ -94,6 +94,45 @@ def insertionSort(A):
             j = j - 1
         i = i + 1
     return A
+
+def mergeSort(arr):
+    '''
+Worst-case performance	O(nlog n)
+Best-case performance	O(nlog n) typical, O(n) natural variant
+Average performance	Theta (n\log n)
+Worst-case space complexity O(n) total with O(n) auxiliary
+    
+    '''
+    if len(arr) > 1: 
+         # Finding the mid of the array
+        mid = len(arr)//2 
+        # Dividing the array elements
+        lefthalf = arr[:mid] 
+        # into 2 halves
+        righthalf = arr[mid:] 
+        # Sorting the first half
+        mergeSort(lefthalf) 
+        # Sorting the second half
+        mergeSort(righthalf) 
+        i = j = k = 0 
+        # Copy data to temp arrays lefthalf[] and righthalf[]
+        while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                arr[k] = lefthalf[i]
+                i += 1
+            else:
+                arr[k] = righthalf[j]
+                j += 1
+            k += 1 
+        # Checking if any element was left
+        while i < len(lefthalf):
+            arr[k] = lefthalf[i]
+            i += 1
+            k += 1 
+        while j < len(righthalf):
+            arr[k] = righthalf[j]
+            j += 1
+            k += 1
     
 def selectionSort(a):
     '''
